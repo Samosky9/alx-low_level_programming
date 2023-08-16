@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * time_table: generates and prints the 9 times table, starting from 0
+ * time_table - generates and prints the 9 times table, starting from 0
  *
  * Return: empty output
  */
 
-void times_table(void)
+int void times_table(void)
 {
 	int x, y, z, k;
 
