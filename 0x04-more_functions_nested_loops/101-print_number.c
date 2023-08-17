@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_nuber - print any integer using putchar
+ * print_number - print any integer using putchar
  * @n: integer to be printed
  */
 
@@ -23,7 +23,6 @@ void print_number(int n)
 		if (n / y == 0 && x == 0)
 		{
 			y /= 10;
-
 			continue;
 		}
 		else if (x == 0)
