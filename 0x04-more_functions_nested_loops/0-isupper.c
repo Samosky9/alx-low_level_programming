@@ -3,14 +3,12 @@
 /**
  * main - check for uppercase character
  * @c: character to be created
- * Return: 1 for uppercase character or 0 for anything else
+ * Return: 1 if uppercase return 0 otherwise
  */
 
 int _isupper(int c);
 {
-if (c >= 65 && c <= 90)
-{
+if (c >= 'A' && c <= 'Z')
 return (1);
-}
 return (0);
 }
