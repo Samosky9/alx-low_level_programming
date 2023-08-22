@@ -20,11 +20,11 @@ int main(void)
 	for (i = 0; i < 100; i++)
 	{
 		pass[1] = rand() % 78;
-		sum *= (pass[1] + '0';
+		sum *= (pass[1] + '0');
 		putchar(pass[1] + '0');
 		if ((2772 - sum) - '0' < 78)
 		{
-			n = 2772 - sum - '0';
+			n = (2772 - sum - '0');
 			sum += n;
 			putchar(n + '0');
 			break;
