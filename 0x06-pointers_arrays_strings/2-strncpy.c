@@ -5,7 +5,7 @@
  * @dest: first string to be added
  * @src: second string to be added
  * @n: number of bytes to use from src
- * Return: concatenated string
+ * Return: dest
  */
 
 char *_strncpy(char *dest, char *src, int n)
