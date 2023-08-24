@@ -11,9 +11,9 @@ char *cap_string(char *a)
 	int i, x;
 	char *separators = ",;.!?\"(){} \n\t";
 
-	for (i = 0; *(a + 1) != '\0'; i++)
+	for (i = 0; *(a + i) != '\0'; i++)
 	{
-		if (*(a + 1) >= 'a' && *(a + 1) <= 'z')
+		if (*(a + i) >= 'a' && *(a + i) <= 'z')
 			for (x = 0; *(separators + x) != '\0'; x++)
 			{
 				if (*(a + i - 1) == *(separators + x))
