@@ -32,20 +32,17 @@ void print_buffer(char *b, int size)
 	else
 		printf("  ");
 	if (i % 2)
-	{
 		printf(" ");
-	}
 
 	for (i = 0; i < j; i++)
 	{
-	int c = *(b + o + i);
+		if (*(b + o + i) >= 32 && *(b + o + i) <= 126)
+			printf("%c", *(b + o + i));
 
-	if (c < 32 || c > 132)
-	{
-		c = '.';
+		else
+		printf(".");
 	}
-	printf("%c", c);
-	}
+
 	printf("\n");
 	o += 10;
 	}
