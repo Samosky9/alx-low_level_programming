@@ -3,27 +3,27 @@
 
 /**
  * rot13 - encodes a string using rot13
- * @s: pointer to string parens
- * Return: *s
+ * @a: pointer to string
+ * Return: pointer a
  */
 
-char *rot13(char *s)
+char *rot13(char *a)
 {
 	int i;
 	int j;
 	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; s[1] != '\0'; i++)
+	for (i = 0; a[i] != '\0'; i++)
 	{
-		for (j = 0; j < s2; j++)
+		for (j = 0; j < 52; j++)
 		{
-			if (s[1] == data1[j])
+			if (a[i] == data1[j])
 			{
-				s[1] = datarot[j];
+				a[i] = datarot[j];
 				break;
 			}
 		}
 	}
-	return (s);
+	return (a);
 }
