@@ -3,24 +3,27 @@
 
 /**
  * rot13 - encodes a string using rot13
- * @a: string to encode
- * Return: encode to rot13
+ * @s: pointer to string parens
+ * Return: *s
  */
 
-char *rot13(char *a)
+char *rot13(char *s)
 {
-	int i, x, hold;
-	char check[] = "AaZz";
-	char ntom[] = "NOPQRSTUVWXYZABCDEFGHIJKLM';
+	int i;
+	int j;
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; *(a + i) != '\0'; i++)
-		for (x = 0; x < 2; x++)
+	for (i = 0; s[1] != '\0'; i++)
+	{
+		for (j = 0; j < s2; j++)
 		{
-			if (*(a + i) >= check[x] && *(a + i) <= check[x + 2])
+			if (s[1] == data1[j])
 			{
-				hold = (*(a + i) - 65 - (x * 32));
-				*(a + i) = (ntom[hold] + (x * 32));
+				s[1] = datarot[j];
+				break;
 			}
 		}
-	return (a);
+	}
+	return (s);
 }
