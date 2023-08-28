@@ -3,7 +3,7 @@
 /**
  * _memset - memset function
  * @s: start point of string to change
- * @b: value that will be replaced
+ * @b: value that will  replace
  * @n: number of bytes to be changed
  * Return: changed pointer
  */
