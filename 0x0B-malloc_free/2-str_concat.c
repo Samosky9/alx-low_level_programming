@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 /**
- * str_concat - unction that concatenates two strings
+ * str_concat - function that concatenates two strings
  * @s1: string 1
  * @s2: string 2
  * Return: return a pointer to the two strings concatenated,
  * or NULL if it fails
  */
 
-char *_strdup(char *str)
+char *str_concat(char *s1, char *s2)
 {
 	char *ptr;
 	unsigned int x, len1, len2 = 0;
