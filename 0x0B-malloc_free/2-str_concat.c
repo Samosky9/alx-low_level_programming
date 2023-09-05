@@ -3,8 +3,8 @@
 
 /**
  * str_concat - unction that concatenates two strings
- * @s1: first string
- * @s2: second string
+ * @s1: string 1
+ * @s2: string 2
  * Return: return a pointer to the two strings concatenated,
  * or NULL if it fails
  */
