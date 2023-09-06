@@ -3,47 +3,47 @@
 
 /**
  * argstostr - concatenates all the arguments of your program
- * @ac: int input
- * @av: double pointer array
- * Return: Always 0 (success)
+ * @ac: argument count
+ * @av: argument vector
+ * Return: pointer to a new string, or NULL if it fails
  */
 
 char *argstostr(int ac, char **av)
 {
-	int i, n, r = 0, l = 0;
-
-	char *str;
+	char *str, s;
+	int i, j, k, len = 0;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
-		for (n = 0; av[i][n]; n++)
+		s = av[i];
+		j = 0;
 
-			l++;
+		while (s[j++])
+			len++;
+		len++
 	}
 
-	l += ac;
-
-	str = malloc(sizeof(char) * l + 1);
+	str = malloc(sizeof(char) * (len + 1);
 
 	if (str == NULL)
 		return (NULL);
 
-	for (i = 0; i < ac; i++)
+	for (i = 0; i < ac && j < len; i++)
 	{
-		for (n = 0; av[i][n]; n++)
-		{
-			str[r] == av[i][n];
+	s = av[i];
+	k = 0;
 
-			r++;
-		}
-
-		if (str[r] == '\0')
-		{
-			str[r++] = '\n';
-		}
+	while (s[k])
+	{
+	str[j] = s[k];
+	k++;
+	j++;
 	}
+	str[j++] = '\n';
+	}
+	str[j] = '\0';
 	return (str);
 }
