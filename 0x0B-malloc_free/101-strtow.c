@@ -1,11 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
 
-void util(char **, char *, int, int, int);
+void util(char **, char *);
+void create_word(char **, char *, int, int, int);
 
 /**
  * strtow - function that splits a string into words
- * @str: string to split
+ * @str: string
  * Return: pointer to an array of strings (words)
  */
 
@@ -63,16 +64,17 @@ void util(char **words, char *str)
 			flag = 1;
 		}
 
-		if (j > 0 && str[i] == ' ' && str[i - 1] != ' ')
+		if (i > 0 && str[i] == ' ' && str[i - 1] != ' ')
 		{
 			create_word(words, str, start, i, j);
 			j++;
 			flag = 0;
 		}
-
-		if (flag == 1)
-			create_word(words, str, start, i, j);
+		i++;
 	}
+
+	if (flag == 1)
+		create_word(words, str, start, i, j);
 }
 
 /**
