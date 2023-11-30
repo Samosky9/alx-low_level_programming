@@ -1,59 +1,70 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
- * Return: Nothing
+ * _realloc - reallocates a memory block using malloc and free
+ * @ptr: pointer to the memory previously allocated
+ * @old_size: old size
+ * @new_size: new size
+ *
+ * Return: NULL
  */
 
-void simple_print_buffer(char *buffer, unsigned int size)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	unsigned int i;
-
-	i = 0;
-
-	while (i < size)
+	if (new_size == 0)
 	{
-		if (i % 10)
+		if (ptr != NULL)
 		{
-			printf(" ");
+			free(ptr);
 		}
-
-		if (!(i % 10) && i)
-		{
-			printf("\n");
-		}
-		printf("0x%02x", buffer[i]);
-		i++;
+		return (NULL);
 	}
 
-	printf("\n");
-}
+	else if (ptr == NULL)
+	{
+		return (malloc(new_size));
+	}
 
-/**
- * main - check the code for
- *
- * Return: Always 0
- */
+	else if (new_size == old_size)
+	{
+		return (ptr);
+	}
+	else
+	{
+		void *new_ptr = malloc(new_size);
+
+		if (new_ptr == NULL)
+		{
+			return (NULL);
+		}
+
+		size_t min_size = (old_size < new_size) ? old_size : new_size;
+
+		memcpy(new_ptr, ptr, min_size);
+		free(ptr);
+
+		return (new_ptr);
+	}
+}
 
 int main(void)
 {
-	char *p;
-	int i;
+	int *arr = (int *)malloc(3 * sizeof(int));
 
-	p = malloc(sizeof(char) * 10);
-	p = _realloc(p, sizeof(char) * 10, sizeof(char) * 98);
-	i = 0;
+	arr[0] = 1;
+	arr[1] = 2;
+	arr[2] = 3;
 
-	while (i < 98)
+	int *new_arr = (int *)_realloc(arr, 3 * sizeof(int), 5 * sizeof(int));
+
+	for (int i = 0; i < 5; i++)
 	{
-		p[i++] = 98;
+		printf("%d ", new_arr[i]);
 	}
-	simple_print_buffer(p, 98);
-	free(p);
+	free(new_arr);
+
 	return (0);
 }
